@@ -1,0 +1,16 @@
+body{
+	padding: 0;
+	margin: 0;
+	background-color: #eee;
+}
+.container{
+	width: 500px;
+	height: 500px;
+	margin: 20px auto;
+	border: 3px solid white;
+}
+.container video{
+width: 500px;
+height: 500px;
+
+}
