@@ -13,7 +13,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
     <!-- custom css file link  -->
-    <link rel="stylesheet" href="css/offre.css">
+     {% load static %}
+    <link rel="stylesheet" href="{% static 'css/offre.css'%}">
    
 
 </head>
@@ -157,7 +158,7 @@
 <div class="imgcomp">
     <div class="slider-car">           
        <div class="img-car">
-          <img src="image/polo.jpg">
+          <img src="{% static 'image/polo.jpg'%}">
 
       </div>
       <h2>volkswagen polo</h2>
@@ -167,7 +168,7 @@
 
   <div class="company">
     <div class="comp">
-      <img src="image/company.jpg">
+      <img src="{% static 'image/company.jpg' %}">
       <h2>hertz company</h2>
 
   </div>

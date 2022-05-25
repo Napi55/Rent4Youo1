@@ -611,7 +611,7 @@ cursor: pointer;
     transition: .4s linear;
 }
 /*+++++++++++++++++++++++++++++++++++++++++++++++++++++*/
-@media (max-width:768px){
+@media (max-width:968px){
 
     #menu-btn{
         display: inline-block;

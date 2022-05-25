@@ -36,7 +36,7 @@
 <section class="home" id="home">
 
     <div class="content">
-        <h3>trouvez, réservez et louez<br> des  véhicules en quelques étapes <span>simples</span></h3>
+        <h3>trouver, réserver et louer<br> des  véhicules en quelques étapes <span>simples</span></h3>
         <br>
         <br>
         <br>
@@ -50,19 +50,19 @@
            <form action="">
                <div>
                    <label>Location:</label>
-                   <input type="text" style=" border-right: 7px solid #ff7800; " name="location" placeholder="Lieu de prise en charge :" >
+                   <input type="text" style=" border-right: 7px solid #ff7800; " name="Lieu" placeholder="Lieu de prise en charge :" >
 
                </div>
                 <div>
                    <label>Du:</label>
                   
-                   <input type="date" name="location" placeholder="" >
+                   <input type="date" name="date1" placeholder="" >
 
                </div>
                 <div>
                    <label></label>
                    
-                   <input type="time" name="location" placeholder="" style=" border-right: 7px solid #ff7800; " >
+                   <input type="time" name="time1" placeholder="" style=" border-right: 7px solid #ff7800; " >
 
                </div>
                <div>
@@ -77,16 +77,19 @@
                    <input type="time" name="location" placeholder="" style="   ">
 
                </div>
-               <button class="btn" type="submit" style="height: 100%; margin-bottom: 8px;">Rechercher</button>
 
 
            </form>
+                        <a href="http://127.0.0.1:8000/clientSide/" >  <button class="btn" type="submit" style="height: 100%; margin-bottom: 8px;">Rechercher</button> </a>
+
 
        </div>
         
     </div>
 
 </section>
+
+
 
 
 <!-- home section ends -->
@@ -132,14 +135,18 @@
 
     <h1 class="heading"> nos <span>véhicules</span> </h1>
 
-    <div class="swiper product-slider">
 
-        <div class="swiper-wrapper">
+    <div class="swiper product-slider">
+                 {% for véhicule in véhicule %}
+        <div class="swiper-wrapper" style=" width:390px">
+
 
             <div class="swiper-slide box">
-                <img src="image/polo.jpg" alt="">
-                <h3>polo</h3>
-                <div class="price">500dz</div>
+
+                <img src="{{véhicule.imageURL}}" >
+
+                <h3>{{véhicule.marque}} {{véhicule.model}} </h3>
+                <div class="price">{{véhicule.prix_jour}}dz/1jour</div>
                 <div class="stars">
                     <i class="fas fa-star"></i>
                     <i class="fas fa-star"></i>
@@ -147,25 +154,27 @@
                     <i class="fas fa-star"></i>
                     <i class="fas fa-star-half-alt"></i>
                 </div>
-                <a href="#" class="btn">Réservé</a>
-            </div>
 
-           
 
-           
+
+</div>
+              {% endfor %}
+
 
         </div>
 
     </div>
 
-    <div class="swiper product-slider">
 
-        <div class="swiper-wrapper">
+    <div class="swiper product-slider">
+        {% for véhicule in véhicule %}
+
+        <div class="swiper-wrapper" style=" width:390px">
 
                 <div class="swiper-slide box">
-                <img src="image/polo.jpg" alt="">
-                <h3>ibiza</h3>
-                <div class="price">500dz</div>
+                 <img src="{% static 'image/polo.jpg' %}" alt="">
+                <h3>{{véhicule.model}} {{véhicule.marque}}</h3>
+                <div class="price">{{véhicule.prix_jour}}dz/1jour</div>
                 <div class="stars">
                     <i class="fas fa-star"></i>
                     <i class="fas fa-star"></i>
@@ -173,8 +182,11 @@
                     <i class="fas fa-star"></i>
                     <i class="fas fa-star-half-alt"></i>
                 </div>
-                <a href="#" class="btn">Réservé</a>
-            </div>
+
+
+
+</div>
+            {% endfor %}
 
            
 
@@ -194,46 +206,58 @@
 
 <section class="categories" id="categories">
 
-    <h1 class="heading">  nos<span> partenaires</span> </h1>
+    <h1 class="heading">  nos<span> Catégorie</span> </h1>
 
     <div class="box-container">
 
         <div class="box">
-            <img src="image/cat-1.png" alt="">
-            <h3>ldl</h3>
+            <img src="{% static 'image/petite.jpg'%}" alt="">
+            <h3>Petites</h3>
           
             
         </div>
 
           <div class="box">
-            <img src="image/cat-1.png" alt="">
-            <h3>ldl</h3>
+            <img src="{% static 'image/moyennes.jpg'%}" alt="">
+            <h3>Moyennes</h3>
           
             
         </div>
           <div class="box">
-            <img src="image/cat-1.png" alt="">
-            <h3>ldl</h3>
+            <img src="{% static 'image/larges.jpg'%}" alt="">
+            <h3>Larges</h3>
           
             
         </div>
           <div class="box">
-            <img src="image/cat-1.png" alt="">
-            <h3>ldl</h3>
+            <img src="{% static 'image/prmium.jpg'%}" alt="">
+            <h3>Premium</h3>
           
             
         </div>
           <div class="box">
-            <img src="image/cat-1.png" alt="">
-            <h3>ldl</h3>
+            <img src="{% static 'image/monospaces.jpg'%}" alt="">
+            <h3>Monospaces</h3>
           
             
         </div>
           <div class="box">
-            <img src="image/cat-1.png" alt="">
-            <h3>ldl</h3>
+            <img src="{% static 'image/suv.jpg'%}" alt="">
+            <h3>SUV</h3>
           
             
+        </div>
+        <div class="box">
+            <img src="{% static 'image/breaks.jpg'%}" alt="">
+            <h3>Breaks</h3>
+
+
+        </div>
+        <div class="box">
+            <img src="{% static 'image/fun.jpg'%}" alt="">
+            <h3>Fun</h3>
+
+
         </div>
 
     </div>
@@ -252,8 +276,32 @@
 
         <div class="swiper-wrapper">
 
-            <div class="swiper-slide box">
-                <img src="image/pic-1.png" alt="">
+            <div class="swiper-slide box" style=" width:405px">
+                <img src="{% static 'image/pic-1.png'%}" alt="">
+                <p>zkkzk zjlllllllll kzllllllllllllllllllllllllllllllll</p>
+                <h3>hadi</h3>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </div>
+            </div>
+            <div class="swiper-slide box" style=" width:405px">
+                <img src="{% static 'image/pic-2.png'%}" alt="">
+                <p>zkkzk zjlllllllll kzllllllllllllllllllllllllllllllll</p>
+                <h3>hadi</h3>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </div>
+            </div>
+            <div class="swiper-slide box" style=" width:405px">
+                <img src="{% static 'image/pic-3.png'%}" alt="">
                 <p>zkkzk zjlllllllll kzllllllllllllllllllllllllllllllll</p>
                 <h3>hadi</h3>
                 <div class="stars">
@@ -276,7 +324,7 @@
 
 <!-- review section ends -->
 
-<
+
 
 <!-- footer section starts  -->
 
@@ -315,7 +363,7 @@
         </div>
          
 
-        <div class="box">
+        <div class="box" id="partenariat">
             <h3>partenariat</h3>
             <p>rejoingnez-nous ici:</p>
             

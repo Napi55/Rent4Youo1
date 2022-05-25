@@ -394,6 +394,7 @@ justify-content: space-evenly;
     outline: var(--outline);
     box-shadow: var(--box-shadow);
     transition: .2s linear;
+
 }
 
 .products .product-slider .box:hover{
@@ -474,6 +475,11 @@ justify-content: space-evenly;
     outline: var(--outline);
     box-shadow: var(--box-shadow);
     transition: .2s linear;
+    width:50px
+}
+.hadj{
+width:50px
+
 }
 
 .review .review-slider .box:hover{
@@ -508,7 +514,7 @@ justify-content: space-evenly;
 .blogs .box-container{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
-    gap:1.5rem;
+    gap:5rem;
 }
 
 .blogs .box-container .box{
